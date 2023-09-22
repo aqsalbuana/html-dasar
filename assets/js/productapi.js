@@ -1,3 +1,18 @@
+let product = [];
+
+async function getProducts() {
+  try {
+    const response = await fetch(
+      "https://650d91b2a8b42265ec2c6846.mockapi.io/api/v1/onepiece"
+    );
+    const data = await response.json();
+    products = data;
+    displayProducts();
+  } catch (error) {
+    console.error("Error fetching products:", error);
+  }
+}
+
 let products = [
   {
     name: "Monkey D Luffy",
